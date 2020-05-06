@@ -1,6 +1,7 @@
 <template>
   <div class="icon-wrapper">
     <users-icon class="icon" :size="size"></users-icon>
+    <slot></slot>
   </div>
 </template>
 
