@@ -1,22 +1,24 @@
 <template>
   <div class="icon-wrapper">
-    <users-icon class="icon" :size="size"></users-icon>
+    <component :is="name" class="icon" :size="size"></component>
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { UsersIcon } from 'vue-feather-icons'
+import { UsersIcon, MapIcon } from 'vue-feather-icons'
 
 export default {
   props: {
     size: {
       type: [Number, String],
       default: '24'
-    }
+    },
+    name
   },
   components: {
-    UsersIcon
+    UsersIcon,
+    MapIcon
   }
 }
 </script>
