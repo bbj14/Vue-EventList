@@ -9,28 +9,16 @@
       <h3>Name & describe your event</h3>
       <div class="field">
         <label>Title</label>
-        <input
-          v-model="event.title"
-          type="text"
-          placeholder="Add an event title"
-        />
+        <input v-model="event.title" type="text" placeholder="Add an event title" />
       </div>
       <div class="field">
         <label>Description</label>
-        <input
-          v-model="event.description"
-          type="text"
-          placeholder="Add a description"
-        />
+        <input v-model="event.description" type="text" placeholder="Add a description" />
       </div>
       <h3>Where is your event?</h3>
       <div class="field">
         <label>Location</label>
-        <input
-          v-model="event.location"
-          type="text"
-          placeholder="Add a location"
-        />
+        <input v-model="event.location" type="text" placeholder="Add a location" />
       </div>
       <h3>When is your event?</h3>
       <div class="field">
@@ -69,7 +57,7 @@ export default {
   methods: {
     createEvent() {
       this.$store
-        .dispatch('createEvent', this.event)
+        .dispatch('event/createEvent', this.event)
         .then(() => {
           this.$router.push({
             name: 'event-show',
@@ -82,7 +70,7 @@ export default {
         })
     },
     createFreshEventObject() {
-      const user = this.$store.state.user
+      const user = this.$store.state.user.user
       const id = Math.floor(Math.random() * 10000000)
 
       return {
